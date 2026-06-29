@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysql
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://github.com/ido273/warehouse-app.git
+      targetRevision: master
+      path: mysql/helm
+      helm:
+        valueFiles:
+          - values.yaml
+          - $values/values/mysql-values.yaml
+    - repoURL: https://github.com/ido273/warehouse-gitops.git
+      targetRevision: master
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: warehouse
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  

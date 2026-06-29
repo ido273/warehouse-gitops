@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: auth-service
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://github.com/ido273/warehouse-app.git
+      targetRevision: master
+      path: auth-service/helm
+      helm:
+        valueFiles:
+          - values.yaml
+          - $values/values/auth-service-values.yaml
+    - repoURL: https://github.com/ido273/warehouse-gitops.git
+      targetRevision: master
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: warehouse
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

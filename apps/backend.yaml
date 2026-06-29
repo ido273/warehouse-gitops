@@ -1,0 +1,29 @@
+# apps/backend.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ido273/warehouse-app.git
+    targetRevision: master
+    path: backend/helm
+    helm:
+      valueFiles:
+        - values.yaml
+        - $values/values/backend-values.yaml
+  sources:
+    - repoURL: https://github.com/ido273/warehouse-gitops.git
+      targetRevision: master
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: warehouse
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

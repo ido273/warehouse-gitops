@@ -1,0 +1,4 @@
+image:
+  repository: mysql
+  tag: "8.0"
+storageClassName: gp2
