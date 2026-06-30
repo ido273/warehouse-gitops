@@ -1,4 +1,6 @@
 image:
   repository: mysql
   tag: "8.0"
-storageClassName: gp2
+primary:
+  persistence:
+    storageClassName: gp2
