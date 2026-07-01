@@ -6,15 +6,14 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://github.com/ido273/warehouse-app.git
-    targetRevision: master
-    path: backend/helm
-    helm:
-      valueFiles:
-        - values.yaml
-        - $values/values/backend-values.yaml
   sources:
+    - repoURL: https://github.com/ido273/warehouse-app.git
+      targetRevision: master
+      path: backend/helm
+      helm:
+        valueFiles:
+          - values.yaml
+          - $values/values/backend-values.yaml
     - repoURL: https://github.com/ido273/warehouse-gitops.git
       targetRevision: master
       ref: values
