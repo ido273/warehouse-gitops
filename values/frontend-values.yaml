@@ -1,6 +1,6 @@
 image:
   repository: 138537744457.dkr.ecr.eu-west-1.amazonaws.com/warehouse-frontend
-  tag: 57c85afd9a7ccffa1b18c55913fb526cb15eda39
+  tag: 3a15bac6b90af632c73a3632a13757f9e7d08474
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 2
