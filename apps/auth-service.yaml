@@ -13,7 +13,7 @@ spec:
       helm:
         valueFiles:
           - values.yaml
-          - $values/values/auth-service-values.yaml
+          - $values/envs/production/auth-service-values.yaml
     - repoURL: https://github.com/ido273/warehouse-gitops.git
       targetRevision: master
       ref: values
