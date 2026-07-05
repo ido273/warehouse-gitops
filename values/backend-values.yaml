@@ -1,7 +1,7 @@
 # values/backend-values.yaml
 image:
   repository: 138537744457.dkr.ecr.eu-west-1.amazonaws.com/warehouse-backend
-  tag: 65d471b4173b60b8ba446344091bf565561b9f37
+  tag: 04ee3992c4c2d3ffff0dbc13cd9fe162362fcf2d
   pullPolicy: Always
 
 imagePullSecrets: []
