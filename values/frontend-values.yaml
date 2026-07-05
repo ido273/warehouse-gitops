@@ -4,3 +4,13 @@ image:
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 2
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: Prefix
