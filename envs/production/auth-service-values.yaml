@@ -1,6 +1,6 @@
 image:
   repository: 138537744457.dkr.ecr.eu-west-1.amazonaws.com/warehouse-auth-service
-  tag: 92760d48362805530e2edfddbe7de1ec2e5ec404
+  tag: 5f677fc1b5f03d74eeec98af5a930a2d655ab295
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 2
