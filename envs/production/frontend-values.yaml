@@ -22,3 +22,7 @@ ingress:
   tls:
     - hosts:
         - warehousems.online
+
+env:
+  - name: FRONTEND_BASE_URL
+    value: "https://warehousems.online"
