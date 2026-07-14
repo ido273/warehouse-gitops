@@ -1,6 +1,6 @@
 image:
   repository: 138537744457.dkr.ecr.eu-west-1.amazonaws.com/warehouse-ai-tagging
-  tag: 5f677fc1b5f03d74eeec98af5a930a2d655ab295
+  tag: aa72da6f4b9e8b1f7d863dbb38d929a15787faf6
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 1
