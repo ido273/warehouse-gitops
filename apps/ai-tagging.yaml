@@ -1,15 +1,14 @@
-# apps/auth-service.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: auth-service
+  name: ai-tagging
   namespace: argocd
 spec:
   project: default
   sources:
     - repoURL: https://github.com/ido273/warehouse-app.git
       targetRevision: master
-      path: auth-service/helm
+      path: ai-tagging/helm
       helm:
         valueFiles:
           - values.yaml
