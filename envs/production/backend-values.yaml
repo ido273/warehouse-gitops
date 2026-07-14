@@ -3,11 +3,22 @@ image:
   repository: 138537744457.dkr.ecr.eu-west-1.amazonaws.com/warehouse-backend
   tag: 0b6fdaa3ec373a5f2a45d81a7f4bd9062884f8bc
   pullPolicy: Always
-
 imagePullSecrets: []
-
 replicaCount: 2
-
 env:
   - name: FRONTEND_BASE_URL
     value: "https://warehousems.online"
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: app-secrets
+        key: database-url
+  - name: JWT_SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: app-secrets
+        key: jwt-secret
+  - name: S3_BUCKET_NAME
+    value: "warehouse-images-ido273"
+  - name: AWS_DEFAULT_REGION
+    value: "eu-west-1"
