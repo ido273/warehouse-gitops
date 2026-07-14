@@ -18,4 +18,3 @@ ingress:
   tls:
     - hosts:
         - warehousems.online
-      secretName: warehouse-tls
