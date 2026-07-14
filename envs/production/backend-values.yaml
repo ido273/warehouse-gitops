@@ -22,3 +22,5 @@ env:
     value: "warehouse-images-ido273"
   - name: AWS_DEFAULT_REGION
     value: "eu-west-1"
+  - name: AI_TAGGING_URL
+    value: "http://ai-tagging:8080"
