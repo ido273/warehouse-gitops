@@ -4,3 +4,6 @@ image:
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 1
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::138537744457:role/warehouse-cluster-ai-tagging-bedrock
