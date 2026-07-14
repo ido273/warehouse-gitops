@@ -26,3 +26,14 @@ ingress:
 env:
   - name: FRONTEND_BASE_URL
     value: "https://warehousems.online"
+  - name: SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: frontend-secret
+        key: secret-key
+  - name: BACKEND_URL
+    value: "http://backend:8080"
+  - name: AUTH_SERVICE_URL
+    value: "http://auth-service:8080"
+  - name: FLASK_ENV
+    value: "production"
