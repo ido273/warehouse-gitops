@@ -8,7 +8,10 @@ ingress:
   enabled: true
   className: nginx
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # NLB (L4) terminates TLS and sets no X-Forwarded-Proto, so nginx can't
+    # detect scheme reliably; ssl-redirect: true loops https->https forever.
+    # NLB's ssl-ports annotation already enforces TLS on the client side.
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   hosts:
