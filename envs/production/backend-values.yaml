@@ -5,6 +5,13 @@ image:
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 2
+resources:
+  requests:
+    cpu: 10m
+    memory: 192Mi
+  limits:
+    cpu: 200m
+    memory: 384Mi
 env:
   - name: FRONTEND_BASE_URL
     value: "https://warehousems.online"

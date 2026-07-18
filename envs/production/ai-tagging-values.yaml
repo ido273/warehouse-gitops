@@ -4,6 +4,13 @@ image:
   pullPolicy: Always
 imagePullSecrets: []
 replicaCount: 1
+resources:
+  requests:
+    cpu: 10m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
 serviceAccount:
   annotations:
     eks.amazonaws.com/role-arn: arn:aws:iam::138537744457:role/warehouse-cluster-ai-tagging-bedrock
