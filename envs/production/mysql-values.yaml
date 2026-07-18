@@ -1,10 +1,6 @@
 image:
   repository: mysql
   tag: "8.0"
-# NOTE: mysql/helm/templates/statefulset.yaml (warehouse-app) currently
-# hardcodes the container's `resources:` block and does not read
-# .Values.resources, unlike the other 4 charts. This key is a no-op
-# until that template is updated to template from .Values.resources.
 resources:
   requests:
     cpu: 50m
