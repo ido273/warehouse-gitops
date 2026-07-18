@@ -31,3 +31,5 @@ env:
     value: "eu-west-1"
   - name: AI_TAGGING_URL
     value: "http://ai-tagging:8080"
+  - name: USE_S3
+    value: "true"
